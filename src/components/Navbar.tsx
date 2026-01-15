@@ -9,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAccessibility } from '../context/AccessibilityContext';
 import { useAuth } from '../context/AuthContext';
 import { COLOR_PALETTE } from '../constants/design-system';
+import { Logo } from './Logo';
 
 interface NavbarProps {
   onSkipContent?: () => void;
@@ -126,23 +127,8 @@ export const Navbar = memo(function Navbar({ onSkipContent }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div className="flex justify-between items-center">
           {/* Logo/Brand */}
-          <Link to="/dashboard" className="flex items-center gap-2 hover:opacity-80">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold"
-              style={{ backgroundColor: primaryColor }}
-              aria-hidden="true"
-            >
-              B
-            </div>
-            <h1
-              className="text-xl font-bold"
-              style={{
-                fontSize: settings.fontSize === 'large' ? '22px' : '20px',
-                color: textColor,
-              }}
-            >
-              Banking
-            </h1>
+          <Link to="/dashboard" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+            <Logo size="md" />
           </Link>
 
           {/* Navigation Links */}

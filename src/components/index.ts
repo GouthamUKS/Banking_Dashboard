@@ -10,3 +10,4 @@ export { AccessibilityPanel } from './AccessibilityPanel';
 export { ErrorBoundary } from './ErrorBoundary';
 export { ErrorMessage } from './ErrorMessage';
 export { LoadingSkeleton } from './LoadingSkeleton';
+export { Logo } from './Logo';

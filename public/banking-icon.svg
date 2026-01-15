@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#0B5345"/>
+  
+  <!-- Bank building -->
+  <g fill="#FFFFFF">
+    <!-- Main building -->
+    <rect x="16" y="24" width="32" height="24" rx="2"/>
+    
+    <!-- Roof/Triangle -->
+    <polygon points="16,24 48,24 32,12"/>
+    
+    <!-- Door -->
+    <rect x="28" y="36" width="8" height="12" fill="#0D6B5F"/>
+    <circle cx="35" cy="42" r="1.5" fill="#E8F5F2"/>
+    
+    <!-- Windows -->
+    <rect x="18" y="26" width="4" height="4" fill="#0D6B5F"/>
+    <rect x="26" y="26" width="4" height="4" fill="#0D6B5F"/>
+    <rect x="34" y="26" width="4" height="4" fill="#0D6B5F"/>
+    <rect x="42" y="26" width="4" height="4" fill="#0D6B5F"/>
+    
+    <rect x="18" y="33" width="4" height="4" fill="#0D6B5F"/>
+    <rect x="42" y="33" width="4" height="4" fill="#0D6B5F"/>
+    
+    <!-- Columns -->
+    <rect x="14" y="28" width="2" height="20" fill="#E8F5F2"/>
+    <rect x="48" y="28" width="2" height="20" fill="#E8F5F2"/>
+  </g>
+</svg>

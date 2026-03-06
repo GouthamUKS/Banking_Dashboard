@@ -1,0 +1,12 @@
+{
+  "folders": [
+    { "path": "apps/V1" },
+    { "path": "archive/V0" }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/dist": true
+    }
+  }
+}

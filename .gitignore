@@ -1,12 +1,8 @@
-* node_modules/
-dist/
+**/node_modules
+**/dist
+**/.vite
+**/.env
+**/.env.*
+!.env.example
+!.env.*.example
 .DS_Store
-*.local
-.env.local
-.env.*.local
-coverage/
-.eslintcache
-*.tsbuildinfo
-dist-ssr/
-.vscode/settings.json
-.vercel

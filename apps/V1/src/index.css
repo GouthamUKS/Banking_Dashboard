@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F2F2F2; color: #1A1A2E; }
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 3px; }
+:focus-visible { outline: 2px solid #1ABC9C; outline-offset: 2px; border-radius: 4px; }
+::selection { background: rgba(26,188,156,0.2); }
+
+/* Card wave pattern */
+.card-wave {
+  background: #1ABC9C;
+  background-image:
+    radial-gradient(ellipse 120% 80% at 110% 120%, rgba(255,255,255,0.12) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 60% at -10% -10%, rgba(255,255,255,0.08) 0%, transparent 60%);
+}
+
+.card-wave-orange {
+  background: linear-gradient(135deg, #FF6B35, #FF8C42);
+  background-image: radial-gradient(ellipse 120% 80% at 110% 120%, rgba(255,255,255,0.12) 0%, transparent 50%);
+}
+
+/* Chip pattern on card */
+.card-chip {
+  width: 36px; height: 28px;
+  background: linear-gradient(135deg, #FFD700, #FFA500);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.card-chip::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 0; right: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.15);
+}
+.card-chip::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 0; bottom: 0;
+  width: 1px;
+  background: rgba(0,0,0,0.15);
+}
+
+/* Animations */
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideRight { from { opacity: 0; transform: translateX(-16px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes countUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes pulse { 0%,100% { box-shadow: 0 0 0 0 rgba(26,188,156,0.4); } 50% { box-shadow: 0 0 0 8px rgba(26,188,156,0); } }
+
+.animate-slide-up { animation: slideUp 0.45s cubic-bezier(0.22,1,0.36,1) forwards; }
+.animate-slide-right { animation: slideRight 0.4s ease forwards; }
+.animate-fade-in { animation: fadeIn 0.35s ease forwards; }
+.animate-spin-slow { animation: spin 1s linear infinite; }
+.animate-pulse-teal { animation: pulse 2s infinite; }
+
+.stagger > * { opacity: 0; animation: slideUp 0.45s cubic-bezier(0.22,1,0.36,1) forwards; }
+.stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger > *:nth-child(2) { animation-delay: 0.1s; }
+.stagger > *:nth-child(3) { animation-delay: 0.15s; }
+.stagger > *:nth-child(4) { animation-delay: 0.2s; }
+.stagger > *:nth-child(5) { animation-delay: 0.25s; }
+.stagger > *:nth-child(6) { animation-delay: 0.3s; }
+.stagger > *:nth-child(7) { animation-delay: 0.35s; }
+.stagger > *:nth-child(8) { animation-delay: 0.4s; }
+
+.skeleton { background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite; border-radius: 8px; }
+
+/* Input focus teal */
+.input-teal:focus { border-color: #1ABC9C !important; box-shadow: 0 0 0 3px rgba(26,188,156,0.12) !important; }
+
+/* Typewriter cursor */
+.typewriter-active { border-color: #1ABC9C !important; }
+.typewriter-active::after { content: '|'; color: #1ABC9C; animation: blink 0.7s infinite; }
+@keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+/* Chart tooltip */
+.recharts-tooltip-wrapper { outline: none !important; }

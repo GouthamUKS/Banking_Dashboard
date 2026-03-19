@@ -86,10 +86,10 @@ export default function TransferPage({ onNavigate }: Props) {
           {payees.length > 0 && (
             <div>
               <div className="text-xs font-semibold text-[#6B7280] uppercase tracking-widest mb-2">Select Payee</div>
-              <div className="flex gap-2 overflow-x-auto pb-1">
+              <div className="flex gap-2 overflow-x-auto pb-1 snap-x snap-mandatory">
                 {payees.map(p => (
                   <button type="button" key={p.id} onClick={() => { setSelected(p); typeIn({ name: p.name, sortCode: p.sortCode, accountNumber: p.accountNumber, reference: p.reference || '' }) }}
-                    className={`flex-shrink-0 flex items-center gap-2 px-3 py-2.5 rounded-xl border text-sm font-medium transition-all ${selected?.id === p.id ? 'bg-[#E8FBF7] border-[#1ABC9C] text-[#1A1A2E]' : 'bg-white border-[#E5E7EB] text-[#6B7280] hover:border-[#1ABC9C]'}`}
+                    className={`snap-start flex-shrink-0 flex items-center gap-2 px-3 py-2.5 rounded-xl border text-sm font-medium transition-all ${selected?.id === p.id ? 'bg-[#E8FBF7] border-[#1ABC9C] text-[#1A1A2E]' : 'bg-white border-[#E5E7EB] text-[#6B7280] hover:border-[#1ABC9C]'}`}
                   >
                     <div className="w-7 h-7 rounded-full bg-[#1ABC9C] flex items-center justify-center text-white text-xs font-bold">{p.avatar}</div>
                     {p.savedAs}
@@ -146,8 +146,8 @@ export default function TransferPage({ onNavigate }: Props) {
           {/* Amount display */}
           <div className="text-center mb-5">
             <div className="text-xs font-semibold text-[#9CA3AF] uppercase tracking-widest mb-2">Amount</div>
-            <div className="text-5xl font-bold text-[#1A1A2E]">
-              ${amount || '0'}.<span className="text-[#9CA3AF] text-3xl">00</span>
+            <div className="font-bold text-[#1A1A2E] leading-none text-[clamp(2rem,9vw,3rem)]">
+              ${amount || '0'}.<span className="text-[#9CA3AF] text-[0.62em]">00</span>
             </div>
           </div>
 

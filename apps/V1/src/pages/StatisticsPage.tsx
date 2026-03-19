@@ -36,12 +36,12 @@ export default function StatisticsPage() {
   return (
     <div className="p-5 lg:p-8 max-w-2xl mx-auto lg:mx-0 lg:max-w-none">
       {/* Header */}
-      <div className="flex items-center justify-between mb-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between mb-6">
         <h1 className="text-xl font-bold text-[#1A1A2E]">Statistics</h1>
-        <div className="flex items-center gap-2 bg-white rounded-xl p-1 shadow-card">
+        <div className="flex items-center gap-2 bg-white rounded-xl p-1 shadow-card overflow-x-auto self-start max-w-full">
           {['Weekly', 'Monthly', 'Yearly'].map(p => (
             <button key={p} onClick={() => setPeriod(p)}
-              className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${period === p ? 'bg-[#1ABC9C] text-white' : 'text-[#9CA3AF] hover:text-[#6B7280]'}`}
+              className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${period === p ? 'bg-[#1ABC9C] text-white' : 'text-[#9CA3AF] hover:text-[#6B7280]'}`}
             >{p}</button>
           ))}
         </div>
@@ -68,7 +68,7 @@ export default function StatisticsPage() {
       </div>
 
       {/* Income/Expense summary */}
-      <div className="grid grid-cols-2 gap-3 mb-5 stagger">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 stagger">
         <div className="bg-white rounded-2xl p-4 shadow-card">
           <div className="flex items-center gap-2 mb-2">
             <div className="w-8 h-8 rounded-xl bg-[#E8FBF7] flex items-center justify-center text-sm">↑</div>
@@ -89,10 +89,10 @@ export default function StatisticsPage() {
       <div className="bg-white rounded-3xl p-5 shadow-card">
         <div className="flex items-center justify-between mb-4">
           <div className="font-bold text-[#1A1A2E]">Details</div>
-          <div className="flex gap-1 bg-[#F2F2F2] rounded-xl p-1">
+          <div className="flex gap-1 bg-[#F2F2F2] rounded-xl p-1 overflow-x-auto">
             {['Expenses','Income'].map(t => (
               <button key={t} onClick={() => setTab(t.toLowerCase() as 'expenses' | 'income')}
-                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${tab === t.toLowerCase() ? 'bg-white text-[#1A1A2E] shadow-sm' : 'text-[#9CA3AF]'}`}
+                className={`whitespace-nowrap px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${tab === t.toLowerCase() ? 'bg-white text-[#1A1A2E] shadow-sm' : 'text-[#9CA3AF]'}`}
               >{t}</button>
             ))}
           </div>

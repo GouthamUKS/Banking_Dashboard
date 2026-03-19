@@ -60,7 +60,7 @@ export default function Layout({ page, onNavigate, user, onLogout, children }: L
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 lg:ml-[220px] pb-[calc(5rem+env(safe-area-inset-bottom))] lg:pb-0 overflow-y-auto min-h-screen">
+      <main className="flex-1 lg:ml-[220px] pb-[calc(5rem+env(safe-area-inset-bottom))] lg:pb-0 overflow-x-hidden overflow-y-auto min-h-screen">
         {children}
       </main>
 

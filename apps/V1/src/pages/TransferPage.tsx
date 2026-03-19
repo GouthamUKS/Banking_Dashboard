@@ -53,7 +53,7 @@ export default function TransferPage({ onNavigate }: Props) {
   const ic = (field: string) => `w-full bg-[#F9FAFB] border rounded-2xl px-4 py-3 text-sm text-[#1A1A2E] outline-none transition-all ${justFilled.has(field) ? 'border-[#1ABC9C] bg-[#E8FBF7]' : 'border-[#E5E7EB] focus:border-[#1ABC9C] focus:shadow-[0_0_0_3px_rgba(26,188,156,0.12)]'} ${typeField === field ? 'border-[#1ABC9C]' : ''}`
 
   return (
-    <div className="p-5 lg:p-8 max-w-2xl mx-auto lg:mx-0 lg:max-w-none">
+    <div className="w-full min-w-0 overflow-x-hidden p-5 lg:p-8 max-w-2xl mx-auto lg:mx-0 lg:max-w-none">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
@@ -79,14 +79,14 @@ export default function TransferPage({ onNavigate }: Props) {
         </div>
       </motion.button>
 
-      <div className="grid lg:grid-cols-2 gap-6">
+      <div className="grid lg:grid-cols-2 gap-6 w-full min-w-0">
         {/* Left: payee selection + form */}
-        <div className="space-y-4">
+        <div className="space-y-4 min-w-0">
           {/* Select payee */}
           {payees.length > 0 && (
             <div>
               <div className="text-xs font-semibold text-[#6B7280] uppercase tracking-widest mb-2">Select Payee</div>
-              <div className="flex gap-2 overflow-x-auto pb-1 snap-x snap-mandatory">
+              <div className="flex gap-2 overflow-x-auto pb-1 snap-x snap-mandatory max-w-full">
                 {payees.map(p => (
                   <button type="button" key={p.id} onClick={() => { setSelected(p); typeIn({ name: p.name, sortCode: p.sortCode, accountNumber: p.accountNumber, reference: p.reference || '' }) }}
                     className={`snap-start flex-shrink-0 flex items-center gap-2 px-3 py-2.5 rounded-xl border text-sm font-medium transition-all ${selected?.id === p.id ? 'bg-[#E8FBF7] border-[#1ABC9C] text-[#1A1A2E]' : 'bg-white border-[#E5E7EB] text-[#6B7280] hover:border-[#1ABC9C]'}`}
@@ -142,7 +142,7 @@ export default function TransferPage({ onNavigate }: Props) {
         </div>
 
         {/* Right: numpad + amount */}
-        <div>
+        <div className="w-full min-w-0">
           {/* Amount display */}
           <div className="text-center mb-5">
             <div className="text-xs font-semibold text-[#9CA3AF] uppercase tracking-widest mb-2">Amount</div>
@@ -152,10 +152,10 @@ export default function TransferPage({ onNavigate }: Props) {
           </div>
 
           {/* Numpad */}
-          <div className="grid grid-cols-3 gap-2 mb-5">
+          <div className="grid grid-cols-3 gap-2 mb-5 w-full">
             {numpad.map(k => (
               <button type="button" key={k} aria-label={k === '⌫' ? 'Delete digit' : `Enter ${k}`} onClick={() => pressKey(k)}
-                className={`h-14 rounded-2xl text-xl font-semibold transition-all active:scale-95 ${k === '⌫' ? 'text-[#EF4444] bg-red-50 hover:bg-red-100' : 'bg-white text-[#1A1A2E] hover:bg-[#E8FBF7] hover:text-[#1ABC9C] shadow-card'}`}
+                className={`w-full h-14 rounded-2xl text-xl font-semibold transition-all active:scale-95 ${k === '⌫' ? 'text-[#EF4444] bg-red-50 hover:bg-red-100' : 'bg-white text-[#1A1A2E] hover:bg-[#E8FBF7] hover:text-[#1ABC9C] shadow-card'}`}
               >{k}</button>
             ))}
           </div>

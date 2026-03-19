@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { -webkit-font-smoothing: antialiased; }
-body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F2F2F2; color: #1A1A2E; }
+html { -webkit-font-smoothing: antialiased; width: 100%; max-width: 100%; overflow-x: hidden; }
+body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F2F2F2; color: #1A1A2E; width: 100%; max-width: 100%; overflow-x: hidden; }
+#root { width: 100%; max-width: 100%; overflow-x: hidden; }
 
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: transparent; }

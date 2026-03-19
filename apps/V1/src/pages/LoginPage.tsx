@@ -7,7 +7,7 @@ export default function LoginPage({ onLogin, onSignup }: Props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
-  const [showPw, setShowPw] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
   const [err, setErr] = useState('')
 
   const handleSubmit = async () => {
@@ -98,20 +98,21 @@ export default function LoginPage({ onLogin, onSignup }: Props) {
               <div className="relative">
                 <input
                   id="login-password"
-                  type={showPw ? 'text' : 'password'}
+                  type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={e => setPassword(e.target.value)}
                   onKeyDown={e => e.key === 'Enter' && handleSubmit()}
                   placeholder="••••••••"
-                  className="input-teal w-full bg-white border border-[#E5E7EB] rounded-2xl px-4 py-3.5 pr-12 text-sm text-[#1A1A2E] placeholder-[#9CA3AF] outline-none transition-all shadow-card"
+                  className="input-teal w-full bg-white border border-[#E5E7EB] rounded-2xl px-4 py-3.5 pr-20 text-sm text-[#1A1A2E] placeholder-[#9CA3AF] outline-none transition-all shadow-card"
                 />
                 <button
                   type="button"
-                  aria-label={showPw ? 'Hide password' : 'Show password'}
-                  onClick={() => setShowPw(!showPw)}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9CA3AF] hover:text-[#6B7280] text-sm transition-colors"
+                  onClick={() => setShowPassword(v => !v)}
+                  aria-label={showPassword ? 'Hide password' : 'Show password'}
+                  aria-pressed={showPassword}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-semibold text-[#1ABC9C] hover:text-[#16A085]"
                 >
-                  {showPw ? '🙈' : '👁'}
+                  {showPassword ? 'Hide' : 'Show'}
                 </button>
               </div>
               <div className="flex justify-end mt-2">
